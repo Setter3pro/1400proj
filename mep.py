@@ -68,9 +68,8 @@ def read_json(filename='favorites.json'):
         data = json.load(target)
     return data
 
-
-# data = get_all_updates()
-# lastupdate = get_last_update(data)
-# print()
-write_json({})
-app.run(host='0.0.0.0',port=int(os.environ('PORT',5000))) # debug=True5
+try:
+    read_json()
+excep:
+    write_json({})
+app.run(host='0.0.0.0',port=int(os.environ.get('PORT',5000))) # debug=True5
